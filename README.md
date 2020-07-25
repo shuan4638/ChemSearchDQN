@@ -29,12 +29,9 @@ conda install -c conda-forge rdkit
 ## Authors
 This code was written by Shuan Chen (PhD candidate of KAIST CBE) in 2020 for DQN practice.
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Reference
 
 This work was inspired by :
-
-## Credit
 
 "Optimization of molecules via deep reinforcement learning", arXiv preprint arXiv:1810.08678, 2018
 

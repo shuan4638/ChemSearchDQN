@@ -1,16 +1,11 @@
 # ChemSearch DQN
-Predicting chemical property using descriptors from Morgan Fingerprints to graph convolutional neural network (GCN)
-
-HIV dataset was used to demo classification task and ESOL dataset was used to demo regression task.
-
-## Data Sparsity
 
 In MolDQN, the Agent learn the property in the chemical space continuously. However in the real world, the chemicals with knwon property are very few (sparse).
 
-Considering this issue, here I made a DQN only learns the property at the chemical point with kwnown data.
+Considering this issue, ChemSearch DQN aims to learns the property only at the chemical point with kwnown property.
 
 For easy demonstration, this work assumed the chemical property can be found after a few steps of chemical contruction.
-<img src="https://github.com/shuan4638/ChemSearchDQN/blob/master/Sparsedata.png">
+<img src="https://github.com/shuan4638/ChemSearchDQN/figs/blob/master/Sparsedata.png">
 
 ## Learn from terminate state
 

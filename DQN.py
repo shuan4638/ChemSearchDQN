@@ -9,10 +9,10 @@ from Agents import *
 
 # Generate experience from first visit MC control
 initial_smiles = 'c1ccccc1'
-limit_step = 10
+limit_step = 15
 atom_types = ['C', 'O', 'N']
 env = Env(initial_smiles, limit_step, atom_types)
-policy, increment_Q, states_history, best_reward = mc_control(env, 2000, 0.02, eps_start=0.4)
+policy, increment_Q, states_history, best_reward = mc_control(env, 10000, 0.02, eps_start=0.4)
 
 # Train the DQN from experience
 epochs = 200
@@ -33,44 +33,19 @@ for n, states in enumerate(states_history):
         print ('\rTraining epoch: %d/%d' % (n+1, len(states_history)), end="")
         sys.stdout.flush()
 
+print ('Plotting DQN training history')
 plt.plot(loss_history)
 plt.title('model loss')
 plt.ylabel('loss')
 plt.xlabel('epoch')
 plt.show()
+plt.close()
 
-
-def generate_episode_from_model(env, eps):
-    """ generates an episode from following the epsilon-greedy policy """
-    episode = []
-    state = env.reset()
-    while True:
-        valid_actions = env.get_valid_actions()
-        actions_rewards = [env.get_reward(next_smiles) for next_smiles in valid_actions]
-        action = np.argmax(actions_rewards) if np.random.random() > eps else np.random.randint(len(actions_rewards))
-        next_state, reward, done = env.step(valid_actions, action)
-        episode.append((state, next_state, reward))
-        if done or next_state == state:
-            break
-        state = next_state
-    return episode
-
-env = DeepEnv(initial_smiles, limit_step, atom_types, agent.model)
-episode = generate_episode_from_model(env, 0.2)
-states, actions, rewards = zip(*episode)
-returns = 0
-for i, state in enumerate(states):
-    returns += rewards[i][0]
-    env.smiles = state
-    print (state)
-    print (env.get_QED())
-env.show_mol()
-
+# Generate optimized molecule from DQN
 initial_smiles = 'c1ccccc1'
-limit_step = 20
+limit_step = 15
 atom_types = ['C', 'O', 'N']
 state_size = 1024
-
 env = DeepEnv(initial_smiles, limit_step, atom_types)
 agent = DQNAgent(state_size)
 done = False

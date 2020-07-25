@@ -5,7 +5,7 @@ In MolDQN, the Agent learn the property in the chemical space continuously. Howe
 Considering this issue, ChemSearch DQN aims to learns the property only at the chemical point with kwnown property.
 
 For easy demonstration, this work assumed the chemical property can be found after a few steps of chemical contruction.
-<img src="https://github.com/shuan4638/ChemSearchDQN/figs/blob/master/Sparsedata.png">
+<img src="https://github.com/shuan4638/ChemSearchDQN/blob/master/Sparsedata.png">
 
 ## Learn from terminate state
 

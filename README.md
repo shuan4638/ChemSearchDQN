@@ -1,10 +1,11 @@
 # ChemSearch DQN
 
-In MolDQN, the Agent learn the property in the chemical space continuously. However in the real world, the chemicals with knwon property are very few (sparse).
+In [MolDQN](https://www.nature.com/articles/s41598-019-47148-x), an agent was trained to optimize the property in the chemical space continuously. However in the real world, the chemicals with knwon property are very few (sparse).
 
 Considering this issue, ChemSearch DQN aims to learns the property only at the chemical point with kwnown property.
 
 For easy demonstration, this work assumed the chemical property can be found after a few steps of chemical contruction.
+
 <img src="https://github.com/shuan4638/ChemSearchDQN/blob/master/Sparsedata.png">
 
 ## Learn from terminate state

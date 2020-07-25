@@ -43,7 +43,7 @@ plt.close()
 
 # Generate optimized molecule from DQN
 initial_smiles = 'c1ccccc1'
-limit_step = 15
+limit_step = 20
 atom_types = ['C', 'O', 'N']
 state_size = 1024
 env = DeepEnv(initial_smiles, limit_step, atom_types)

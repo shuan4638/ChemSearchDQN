@@ -10,7 +10,7 @@ In MolDQN, the Agent learn the property in the chemical space continuously. Howe
 Considering this issue, here I made a DQN only learns the property at the chemical point with kwnown data.
 
 For easy demonstration, this work assumed the chemical property can be found after a few steps of chemical contruction.
-<img src="https://github.com/shuan4638/ChemSearchDQN/figs/blob/master/Sparsedata.png">
+<img src="https://github.com/shuan4638/ChemSearchDQN/blob/master/Sparsedata.png">
 
 ## Learn from terminate state
 
@@ -20,7 +20,7 @@ See ChemSearch.py to discover the constructing pathway from C4 to Arginine.
 
 After finding the pathways of chemical construction, DQN could learn from this pathways and be applied to real world dataset.
 
-<img src="https://github.com/shuan4638/ChemSearchDQN/figs/blob/master/Targetsearch.png">
+<img src="https://github.com/shuan4638/ChemSearchDQN/blob/master/Targetsearch.png">
 
 ## Installation
 
